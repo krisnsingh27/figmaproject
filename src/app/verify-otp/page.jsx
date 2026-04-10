@@ -12,7 +12,7 @@ export default function page() {
     //login successfully after clicking on the button
     const handlelogin=async(e)=>{
         e.preventDefault();
-        //implement it through useEffect
+        //implement it through useEffect and useState
         try{
            const response=await axios.post(url,{
              email:email,
