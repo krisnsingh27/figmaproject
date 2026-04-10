@@ -12,6 +12,7 @@ export default function page() {
     //login successfully after clicking on the button
     const handlelogin=async(e)=>{
         e.preventDefault();
+        //implement it through useEffect
         try{
            const response=await axios.post(url,{
              email:email,
@@ -31,10 +32,39 @@ export default function page() {
     }
     
   return (
-    <div>
-       <input type="email" placeholder='enter email...' value={email} onChange={e=>setEmail(e.target.value)} /> <br />
-       <input type="number" placeholder='enter otp...' value={otp} onChange={e=>setOtp(e.target.value)}/>
-       <button  onClick={handlelogin}>Login</button>
-    </div>
+  <div className="min-h-screen flex items-center justify-center ">
+
+  <div className="bg-white w-80 p-6 rounded-2xl shadow-xl text-center">
+
+    <h1 className="text-2xl font-bold text-gray-800 mb-4">
+      OTP Login
+    </h1>
+
+    <input
+      type="email"
+      placeholder="Enter email"
+      value={email}
+      onChange={(e) => setEmail(e.target.value)}
+      className="border border-gray-300 p-2 w-full mb-3 rounded-lg text-black"
+    />
+
+    <input
+      type="number"
+      placeholder="Enter OTP"
+      value={otp}
+      onChange={(e) => setOtp(e.target.value)}
+      className="border border-gray-300 p-2 w-full mb-4 rounded-lg text-black"
+    />
+
+    <button
+      onClick={handlelogin}
+      className="text-white bg-blue-600 hover:bg-blue-700 cursor-pointer w-full rounded-lg "
+    >
+      Login
+    </button>
+
+  </div>
+
+</div>
   )
 }
