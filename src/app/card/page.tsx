@@ -10,7 +10,7 @@ interface CardItem {
   image: string;
 }
 
-
+//commented code
 const cardData: CardItem[] = [
   {
     id: 1,
