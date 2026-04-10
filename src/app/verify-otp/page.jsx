@@ -9,6 +9,7 @@ export default function page() {
     const [data,setData]=useState(null)
     const router=useRouter()
     let url='http://localhost:3200/api/verifyotp'
+    //login successfully after clicking on the button
     const handlelogin=async(e)=>{
         e.preventDefault();
         try{
